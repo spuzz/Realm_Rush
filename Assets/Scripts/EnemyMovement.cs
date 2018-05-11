@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour {
 
     private IEnumerator Pathfind()
     {
-        List<Waypoint> path = FindObjectOfType<Pathfinder>().Pathfind(new Vector2Int(Mathf.RoundToInt(gameObject.transform.position.x), Mathf.RoundToInt(gameObject.transform.position.z)), targetWayPoint.GetGridPos());
+        List<Waypoint> path = FindObjectOfType<Pathfinder>().Pathfind(new Vector2Int(Mathf.RoundToInt(gameObject.transform.position.x / 10), Mathf.RoundToInt(gameObject.transform.position.z / 10)), targetWayPoint.GetGridPos());
         foreach (Waypoint waypoint in path)
         {
             gameObject.transform.position = waypoint.transform.position;
